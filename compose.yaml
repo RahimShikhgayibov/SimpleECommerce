@@ -1,0 +1,6 @@
+﻿services:
+  simpleecommerce.webapi:
+    image: simpleecommerce.webapi
+    build:
+      context: .
+      dockerfile: SimpleECommerce.WebAPI/Dockerfile
