@@ -1,18 +1,20 @@
+using SimpleECommerce.Domain.Entities.Bases;
+
 namespace SimpleECommerce.Domain.Entities;
 
 
-public class Cart
+public class Cart : FullAuditedEntity, IActivableEntity, IRemarkableEntity
 {
-    public int Id { get; set; }
-    public int CustomerId { get; set; }
+    public int UserId { get; set; }
     
-    public Customer Customer { get; set; }
-
-    public bool IsCheckedOut { get; set; } = false;
+    public User User { get; set; }
     
-    public DateTime CreatedAt { get; set; }
+    //public DateTime CreatedAt { get; set; } zaten var 
     
     public DateTime UpdatedAt { get; set; }
 
     public ICollection<CartItem> CartItems { get; set; }
+    
+    public bool IsActive { get; set; }
+    public bool? IsValid { get; set; }
 }

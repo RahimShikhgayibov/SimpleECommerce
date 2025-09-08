@@ -1,11 +1,10 @@
+using SimpleECommerce.Domain.Entities.Bases;
 using SimpleECommerce.Domain.Enums;
 
 namespace SimpleECommerce.Domain.Entities;
 
-public class Refund
+public class Refund : CreationAuditedEntity
 {
-    public int Id { get; set; }
-    
     public int CancellationId { get; set; }
     public Cancellation Cancellation { get; set; }
     
@@ -16,7 +15,7 @@ public class Refund
     
     public RefundStatus Status { get; set; }
     
-    public string RefundMethod { get; set; }
+    public RefundMethod RefundMethod { get; set; }
     
     public string? RefundReason { get; set; }
 

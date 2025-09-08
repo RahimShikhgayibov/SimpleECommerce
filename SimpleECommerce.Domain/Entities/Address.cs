@@ -1,13 +1,14 @@
+using SimpleECommerce.Domain.Entities.Bases;
+
 namespace SimpleECommerce.Domain.Entities;
 
 
-public class Address
+public class Address : AuditedEntity
 {
-    public int Id { get; set; }
+    public int UserId { get; set; }
     
-    public int CustomerId { get; set; }
+    public User User { get; set; }
     
-    public Customer Customer { get; set; }
     
     public string AddressLine1 { get; set; }
     

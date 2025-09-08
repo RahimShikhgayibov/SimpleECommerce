@@ -1,10 +1,10 @@
+using SimpleECommerce.Domain.Entities.Bases;
+
 namespace SimpleECommerce.Domain.Entities;
 
 
-public class OrderItem
+public class OrderItem : CreationAuditedEntity
 {
-    public int Id { get; set; }
-    
     public int OrderId { get; set; }
     public Order Order { get; set; }
     

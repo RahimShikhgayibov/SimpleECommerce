@@ -1,12 +1,10 @@
+using SimpleECommerce.Domain.Entities.Bases;
 using SimpleECommerce.Domain.Enums;
 
 namespace SimpleECommerce.Domain.Entities;
 
-// Represents a payment transaction
-public class Payment
+public class Payment : CreationAuditedEntity
 {
-    public int Id { get; set; }
-    
     public int OrderId { get; set; }
     public Order Order { get; set; }
     
@@ -16,7 +14,7 @@ public class Payment
     
     public decimal Amount { get; set; }
     
-    public DateTime PaymentDate { get; set; }
+    public DateTime PaymentDate { get; set; } // lazimdirmi?
     
     public PaymentStatus Status { get; set; } // "Completed", "Pending", "Failed", "Refunded"
 

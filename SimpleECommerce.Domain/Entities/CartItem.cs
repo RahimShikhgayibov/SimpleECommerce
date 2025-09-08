@@ -1,10 +1,10 @@
+using SimpleECommerce.Domain.Entities.Bases;
+
 namespace SimpleECommerce.Domain.Entities;
 
 
-public class CartItem
+public class CartItem : CreationAndDeletionAuditedEntity
 {
-    public int Id { get; set; }
-    
     public int CartId { get; set; }
     public Cart Cart { get; set; }
     
@@ -19,7 +19,7 @@ public class CartItem
     
     public decimal TotalPrice { get; set; }
     
-    public DateTime CreatedAt { get; set; }
+    //public DateTime CreatedAt { get; set; } zaten var
     
     public DateTime UpdatedAt { get; set; }
 }

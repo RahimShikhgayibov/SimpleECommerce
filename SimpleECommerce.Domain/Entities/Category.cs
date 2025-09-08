@@ -1,10 +1,10 @@
+using SimpleECommerce.Domain.Entities.Bases;
+
 namespace SimpleECommerce.Domain.Entities;
 
 
-public class Category
+public class Category : FullAuditedEntity,IActivableEntity
 {
-    public int Id { get; set; }
-    
     public string Name { get; set; }
     
     public string Description { get; set; }

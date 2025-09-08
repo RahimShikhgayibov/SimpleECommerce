@@ -1,10 +1,10 @@
+using SimpleECommerce.Domain.Entities.Bases;
+
 namespace SimpleECommerce.Domain.Entities;
 
 
-public class Product
+public class Product : FullAuditedEntity,IRemarkableEntity
 {
-    public int Id { get; set; }
-    
     public string Name { get; set; }
     
     public string Description { get; set; }
@@ -15,7 +15,6 @@ public class Product
     public string ImageUrl { get; set; }
     
     public int DiscountPercentage { get; set; }
-    public bool IsAvailable { get; set; }
     
     public int CategoryId { get; set; }
     
@@ -23,4 +22,5 @@ public class Product
     
     public ICollection<OrderItem> OrderItems { get; set; }
     public ICollection<Feedback> Feedbacks { get; set; }
+    public bool? IsValid { get; set; }
 }
