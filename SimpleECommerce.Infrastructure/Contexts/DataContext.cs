@@ -30,5 +30,17 @@ public class DataContext(DbContextOptions options) : DbContext(options)
     public DbSet<Payment> Payments { get; set; }
     public DbSet<Refund> Refunds { get; set; }
     public DbSet<Product> Products { get; set; }
-    //identity Number , snapshot , ticket , flow , 
+    
+    //public DbSet<Snapshot> Snapshots { get; set; }
+    //public DbSet<ObjectRequest> Requests { get; set; }
+    //public DbSet<ObjectRequestHistory> RequestHistories { get; set; }
+    //public DbSet<Notification> Notifications { get; set; }
+    //public DbSet<NotificationUser> NotificationUsers { get; set; }
+    //public DbSet<IdentityNumber> IdentityNumbers { get; set; }
+    //public DbSet<ObjectRemark> ObjectRemarks { get; set; }
+    //public DbSet<Ticket> Tickets { get; set; }
+    //public DbSet<TicketObject> TicketObjects { get; set; }
+    //public DbSet<TicketUser> TicketUsers { get; set; }
+    //public DbSet<TicketMessage> TicketMessages { get; set; }
+    //public DbSet<TicketMessageAttachment> TicketMessageAttachments { get; set; }
 }
