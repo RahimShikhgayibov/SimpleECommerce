@@ -2,7 +2,10 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.RateLimiting;
 using SimpleECommerce.Application;
+using SimpleECommerce.Application.Extensions;
+//using SimpleECommerce.Application.Hubs;
 using SimpleECommerce.Infrastructure.Extensions;
+//using SimpleECommerce.WebAPI.Middlewares;
 using Microsoft.AspNetCore.RateLimiting;
 using Serilog;
 using OfficeOpenXml; // Add this import for EPPlus
@@ -65,15 +68,15 @@ try
     
     if (!app.Environment.IsProduction())
     {
-        app.UseSwagger("SimpleECommerce", "WebAPI");
+        app.UseSwagger("KII", "WebAPI");
         await app.Services.InitialiseDatabaseAsync();
     }
     
     app.UseHttpsRedirection();
     app.UseAuthentication();
     app.UseAuthorization();
-    //app.MapHub<NotificationHub>("/hub/notifications");
-    //app.MapHub<TicketHub>("/hub/tickets");
+    app.MapHub<NotificationHub>("/hub/notifications");
+    app.MapHub<TicketHub>("/hub/tickets");
     app.MapControllers();
     app.UseRateLimiter();
     app.MapHealthChecks("/healthz");

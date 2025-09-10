@@ -10,7 +10,6 @@
       <Folder Include="Constants\" />
       <Folder Include="Dtos\" />
       <Folder Include="Exceptions\" />
-      <Folder Include="Extensions\" />
       <Folder Include="Helpers\" />
       <Folder Include="Hubs\" />
       <Folder Include="Mappers\" />
