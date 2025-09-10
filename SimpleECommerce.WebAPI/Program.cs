@@ -13,7 +13,7 @@ using SimpleECommerce.WebAPI.Middlewares; // Add this import for EPPlus
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Set EPPlus license context here, before any services are configured
-ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Change to Commercial if you have a license
+ExcelPackage.License.SetNonCommercialPersonal("Rahim");  // Change to Commercial if you have a license
 
 builder.Services
     .AddControllers(options =>
