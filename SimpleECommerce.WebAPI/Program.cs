@@ -5,10 +5,10 @@ using SimpleECommerce.Application;
 using SimpleECommerce.Application.Extensions;
 //using SimpleECommerce.Application.Hubs;
 using SimpleECommerce.Infrastructure.Extensions;
-//using SimpleECommerce.WebAPI.Middlewares;
 using Microsoft.AspNetCore.RateLimiting;
 using Serilog;
-using OfficeOpenXml; // Add this import for EPPlus
+using OfficeOpenXml;
+using SimpleECommerce.WebAPI.Middlewares; // Add this import for EPPlus
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -75,8 +75,8 @@ try
     app.UseHttpsRedirection();
     app.UseAuthentication();
     app.UseAuthorization();
-    app.MapHub<NotificationHub>("/hub/notifications");
-    app.MapHub<TicketHub>("/hub/tickets");
+    //app.MapHub<NotificationHub>("/hub/notifications");
+    //app.MapHub<TicketHub>("/hub/tickets");
     app.MapControllers();
     app.UseRateLimiter();
     app.MapHealthChecks("/healthz");
