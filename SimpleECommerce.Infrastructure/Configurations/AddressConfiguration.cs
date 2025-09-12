@@ -10,15 +10,58 @@ public class AddressConfiguration : IEntityTypeConfiguration<Address>
     {
         builder.ToTable("addresses");
 
-        builder.HasKey(a => a.Id).HasName("pk_addresses");
+        builder.HasKey(a => a.Id)
+            .HasName("pk_addresses");
+        
+        builder.Property(e => e.Id)
+            .IsRequired()
+            .HasColumnName("id");
+        
+        builder.Property(a => a.AddressLine1)
+            .IsRequired()
+            .HasColumnName("address_line1");
+        
+        builder.Property(a => a.AddressLine2)
+            .IsRequired()
+            .HasColumnName("address_line2");
+        
+        builder.Property(a => a.Street)
+            .IsRequired()
+            .HasColumnName("street");
+        
+        builder.Property(a => a.City)
+            .IsRequired()
+            .HasColumnName("city");
+        
+        builder.Property(a => a.State)
+            .IsRequired()
+            .HasColumnName("state");
+        
+        builder.Property(a => a.PostalCode)
+            .IsRequired()
+            .HasColumnName("postal_code");
+        
+        builder.Property(a => a.Country)
+            .IsRequired()
+            .HasColumnName("country");
+        
+        builder.Property(e => e.IsActive)
+            .IsRequired()
+            .HasColumnName("is_active")
+            .HasDefaultValue(true);
+        
+        builder.Property(e => e.CreationTime)
+            .IsRequired()
+            .HasColumnName("creation_time");
 
-        builder.Property(a => a.Id).HasColumnName("id").IsRequired();
+        builder.Property(e => e.CreatorUserId)
+            .IsRequired()
+            .HasColumnName("creator_user_id");
 
-        // Example properties (adjust names to your model)
-        builder.Property(a => a.Street).HasColumnName("street");
-        builder.Property(a => a.City).HasColumnName("city");
-        builder.Property(a => a.State).HasColumnName("state");
-        builder.Property(a => a.PostalCode).HasColumnName("postal_code");
-        builder.Property(a => a.Country).HasColumnName("country");
+        builder.Property(e => e.LastModificationTime)
+            .HasColumnName("last_modification_time");
+
+        builder.Property(e => e.LastModifierUserId)
+            .HasColumnName("last_modifier_user_id");
     }
 }
