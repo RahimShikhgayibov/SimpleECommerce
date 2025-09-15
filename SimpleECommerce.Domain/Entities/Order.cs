@@ -6,9 +6,7 @@ namespace SimpleECommerce.Domain.Entities;
 
 public class Order : FullAuditedEntity
 {
-    public string OrderNumber { get; set; }
-    
-    public DateTime OrderDate { get; set; } //lazimdirmi?
+    public string OrderNumber { get; set; }//identity number bax!
     
     public int UserId { get; set; }
     public User User { get; set; }

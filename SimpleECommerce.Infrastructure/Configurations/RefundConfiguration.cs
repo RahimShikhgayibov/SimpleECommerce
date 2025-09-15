@@ -18,6 +18,25 @@ public class RefundConfiguration : IEntityTypeConfiguration<Refund>
         builder.HasOne(r => r.Payment)
             .WithOne(p => p.Refund)
             .HasForeignKey<Refund>(r => r.PaymentId)
+            .HasConstraintName("fk_refunds_payment_id")
             .OnDelete(DeleteBehavior.Restrict);
+        
+        builder.Property(p => p.CancellationId).HasColumnName("cancellation_id").IsRequired();
+        
+        builder.HasOne(e => e.Cancellation)
+            .WithOne(e => e.Refund)
+            .HasForeignKey<Refund>(e => e.CancellationId)
+            .HasConstraintName("fk_refunds_category_id")
+            .OnDelete(DeleteBehavior.Restrict);
+        
+        builder.Property(p => p.Amount).HasColumnName("amount").IsRequired();
+        
+        builder.Property(p => p.Status).HasColumnName("status").IsRequired();
+        
+        builder.Property(p => p.RefundMethod).HasColumnName("refund_method").IsRequired();
+        
+        builder.Property(p => p.RefundReason).HasColumnName("refund_reason").IsRequired();
+        
+        builder.Property(p => p.TransactionId).HasColumnName("transaction_id");
     }
 }

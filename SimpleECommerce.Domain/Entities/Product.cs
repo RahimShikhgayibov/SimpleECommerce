@@ -3,7 +3,7 @@ using SimpleECommerce.Domain.Entities.Bases;
 namespace SimpleECommerce.Domain.Entities;
 
 
-public class Product : FullAuditedEntity,IRemarkableEntity
+public class Product : FullAuditedEntity,IRemarkableEntity,IActivableEntity
 {
     public string Name { get; set; }
     
@@ -24,4 +24,5 @@ public class Product : FullAuditedEntity,IRemarkableEntity
     public ICollection<OrderItem> OrderItems { get; set; }
     public ICollection<Feedback> Feedbacks { get; set; }
     public bool? IsValid { get; set; }
+    public bool IsActive { get; set; }
 }

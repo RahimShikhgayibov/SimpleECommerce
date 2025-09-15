@@ -8,15 +8,13 @@ public class Payment : CreationAuditedEntity
     public int OrderId { get; set; }
     public Order Order { get; set; }
     
-    public string PaymentMethod { get; set; } // e.g., "DebitCard", "CreditCard", "PayPal", "COD"
+    public string PaymentMethod { get; set; } 
     
-    public string? TransactionId { get; set; } // From payment gateway
+    public string? TransactionId { get; set; } 
     
     public decimal Amount { get; set; }
     
-    public DateTime PaymentDate { get; set; } // lazimdirmi?
-    
-    public PaymentStatus Status { get; set; } // "Completed", "Pending", "Failed", "Refunded"
+    public PaymentStatus Status { get; set; } 
 
-    public Refund Refund { get; set; } // Navigational property to Refund
+    public Refund Refund { get; set; } 
 }

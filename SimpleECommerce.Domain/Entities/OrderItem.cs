@@ -3,7 +3,7 @@ using SimpleECommerce.Domain.Entities.Bases;
 namespace SimpleECommerce.Domain.Entities;
 
 
-public class OrderItem : CreationAuditedEntity
+public class OrderItem : CreationAndDeletionAuditedEntity
 {
     public int OrderId { get; set; }
     public Order Order { get; set; }
