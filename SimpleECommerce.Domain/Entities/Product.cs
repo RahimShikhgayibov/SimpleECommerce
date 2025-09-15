@@ -19,6 +19,7 @@ public class Product : FullAuditedEntity,IRemarkableEntity
     public int CategoryId { get; set; }
     
     public Category Category { get; set; }
+    public CartItem CartItem { get; set; }
     
     public ICollection<OrderItem> OrderItems { get; set; }
     public ICollection<Feedback> Feedbacks { get; set; }

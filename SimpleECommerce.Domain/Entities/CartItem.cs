@@ -18,8 +18,4 @@ public class CartItem : CreationAndDeletionAuditedEntity
     public decimal Discount { get; set; }
     
     public decimal TotalPrice { get; set; }
-    
-    //public DateTime CreatedAt { get; set; } zaten var
-    
-    public DateTime UpdatedAt { get; set; }
 }

@@ -8,10 +8,6 @@ public class Cart : FullAuditedEntity, IActivableEntity, IRemarkableEntity
     public int UserId { get; set; }
     
     public User User { get; set; }
-    
-    //public DateTime CreatedAt { get; set; } zaten var 
-    
-    public DateTime UpdatedAt { get; set; }
 
     public ICollection<CartItem> CartItems { get; set; }
     

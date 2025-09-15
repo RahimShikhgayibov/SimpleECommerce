@@ -16,7 +16,7 @@ public class Cancellation : CreationAndDeletionAuditedEntity
     
     public decimal OrderAmount { get; set; }
     
-    public decimal? CancellationCharges { get; set; } = 0.00m;
+    public decimal CancellationCharges { get; set; }
     
     public Refund Refund { get; set; }
 }

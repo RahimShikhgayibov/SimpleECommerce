@@ -29,18 +29,42 @@ public class CancellationConfiguration : IEntityTypeConfiguration<Cancellation>
         
         builder.Property(e => e.Reason)
             .IsRequired()
-            .HasColumnName("type");
+            .HasColumnName("reason");
         
         builder.Property(e => e.Status)
             .IsRequired()
-            .HasColumnName("type");
+            .HasColumnName("status");
+        
         builder.Property(e => e.OrderAmount)
             .IsRequired()
-            .HasColumnName("type");
+            .HasColumnName("order_amount");
         
         builder.Property(e => e.CancellationCharges)
+            .HasColumnName("cancellation_charges")
             .IsRequired()
-            .HasColumnName("type");
+            .HasColumnType("decimal(18,2)")
+            .HasDefaultValue(0.00m);
+        
+        builder.Property(e => e.IsDeleted)
+            .IsRequired()
+            .HasColumnName("is_deleted")
+            .HasDefaultValue(false);
+        
+        builder.Property(e => e.CreationTime)
+            .IsRequired()
+            .HasColumnName("creation_time");
+
+        builder.Property(e => e.CreatorUserId)
+            .IsRequired()
+            .HasColumnName("creator_user_id");
+        
+        builder.Property(e => e.DeletionTime)
+            .IsRequired(false)
+            .HasColumnName("deletion_time");
+
+        builder.Property(e => e.DeleterUserId)
+            .IsRequired(false)
+            .HasColumnName("deleter_user_id");
         
     }
 }
